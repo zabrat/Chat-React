@@ -1,8 +1,8 @@
 import constants from '../constants';
 
-export const authSubmit = userName => ({
+export const authSubmit = payload => ({
     type: constants.AUTH_SUBMIT,
-    payload: userName,
+    payload:
 });
 
 export const sendMessage = (user, message) => ({

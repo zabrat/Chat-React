@@ -13,7 +13,7 @@ class Authorization extends React.PureComponent {
         const {
             name,
             value
-        } = e.target
+        } = e.target;
         const {
             onSaveLogin
         } = this;
@@ -30,10 +30,10 @@ class Authorization extends React.PureComponent {
     }
 
     handleClick = e => {
-        const { saveCurrentUser } = this.props; //ask props
+        const { saveUser } = this.props; //ask props
         e.preventDefault();
 
-        saveCurrentUser(this.state.login);
+        saveUser(this.state.login);
     }
 
 

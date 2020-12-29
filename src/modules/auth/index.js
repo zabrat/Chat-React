@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    saveCurrentUser: payload => dispatch(actions.authSubmit(payload)),
+    saveUser: payload => dispatch(actions.authSubmit(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Component);
