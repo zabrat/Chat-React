@@ -1,65 +1,39 @@
 import React from 'react';
 
-class Authorization extends React.PureComponent {
+class Authorization extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            login: ''
+        this.state = { 
+            login: null
         }
     }
 
-    userInput = e => {
-        const {
-            name,
-            value
-        } = e.target
-        const {
-            onSaveLogin
-        } = this;
-
-        if (name === 'login') {
-            onSaveLogin(value)
-        }
+    handleSubmit = event => {
+        event.preventDefault();
+        console.log(this.state.login);
     }
 
-    onSaveLogin = value => {
-        this.setState(() => ({
-            login: value
-        }))
+    handleInput = event => {
+        
+        this.setState({
+            login: event.target.value
+        });
     }
-
-    handleClick = e => {
-        const { saveCurrentUser } = this.props; //ask props
-        e.preventDefault();
-
-        saveCurrentUser(this.state.login);
-    }
-
-
+    
     render() {
-        const {
-            userName
-        } = this.props;
-        const {
-            handleClick,
-            handleInput
-        } = this;
+        const { handleSubmit, handleInput } = this;
 
         return (
-            <div className={'rootcontainer__auth'}>
-                <form className={'auth-container__auth-form'}>
-                <span className ={'auth-form__form-name'} 
+            <div className={'root__auth-container'}>
+                <form onSubmit={handleSubmit} className={'auth-container__auth-form'}>
+                <span className={'auth-form__form-name'} 
                       children={'Authorization'}/>
-
-                    <input name={'login'} 
-                           value={this.state.login} 
-                           onChange={handleInput} 
+                    <input onChange={handleInput}
+                            name={'login'} 
                            placeholder={'Please Type userName'}
                            className={'auth-form__login-input'}/>
-
-                    <button onClick={handleClick}
-                            className={'auth-form__submit-button'} 
+                    <button className={'auth-form__submit-button'} 
                             children={'Sign in'}/>
                 </form>
             </div>    

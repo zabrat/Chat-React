@@ -3,7 +3,7 @@ import constants from '../../constants';
 const initialState = {
     isLoading: false,
     currentUser: {
-        name: ''
+        user: null
     },
 };
 
@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
                 ...state,
                 currentUser: {
                     ...state.currentUser,
-                    name: action.payload
+                    user: action.payload
                 }
             };
         default:
