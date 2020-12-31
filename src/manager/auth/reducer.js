@@ -1,10 +1,8 @@
 import constants from '../../constants';
 
 const initialState = {
-    isLoading: false,
-    currentUser: {
-        user: null
-    },
+    isLoged: false,
+    currentUser: null
 };
 
 export default (state = initialState, action) => {
@@ -12,10 +10,8 @@ export default (state = initialState, action) => {
         case constants.AUTH_SUBMIT:
             return {
                 ...state,
-                currentUser: {
-                    ...state.currentUser,
-                    user: action.payload
-                }
+                currentUser: action.userName,
+                isLoged: true
             };
         default:
             return state;

@@ -8,7 +8,7 @@ import rootReducer from './root/rootReducer';
 import { Provider } from 'react-redux';
 
 function init() {
-  const store = createStore(rootReducer)
+  const store = createStore(rootReducer);
   window.store = store;
 
   ReactDOM.render(

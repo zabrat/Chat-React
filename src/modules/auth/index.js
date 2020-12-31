@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
     userName: selectors.getUserName(state),
+    isLoged: selectors.getLogState(state)
 });
 
 const mapDispatchToProps = dispatch => ({

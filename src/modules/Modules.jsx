@@ -12,23 +12,11 @@ class Modules extends React.Component{
         this.state = { 
             
         }
-        
-    }
-
-    init = () => {
-        
-    }
-
-    showMessenger = () => {
-        return (
-            <Authorization/>
-        );
     }
 
     render() {
-        Messenger.logOut(this.showMessenger.bind(this))
         return (
-            <Messenger/>
+            <Authorization/>
         );
     }
 }

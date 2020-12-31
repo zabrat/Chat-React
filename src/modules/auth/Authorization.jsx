@@ -11,13 +11,14 @@ class Authorization extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state.login);
+        const { saveCurrentUser } = this.props;
+
+        saveCurrentUser(this.state.login);
     }
 
     handleInput = event => {
-        
         this.setState({
-            login: event.target.value
+            login: event.target.value,
         });
     }
     
